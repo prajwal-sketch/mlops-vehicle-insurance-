@@ -13,14 +13,19 @@
 
 
 # # below code is to check the exception config
-import sys
-import logging
+# import sys
+# import logging
 
-from src.exception import MyException
-from src.logger import logging  # ensures logger is configured (adjust path if needed)
+# from src.exception import MyException
+# from src.logger import logging  # ensures logger is configured (adjust path if needed)
 
-try:
-    a = 1 + 'Z'
-except Exception as e:
-    logging.error("Exception occurred: %s", e)
-    raise MyException(e, sys) from e
+# try:
+#     a = 1 + 'Z'
+# except Exception as e:
+#     logging.error("Exception occurred: %s", e)
+#     raise MyException(e, sys) from e
+
+from src.pipline.training_pipeline import TrainPipeline
+
+pipline = TrainPipeline()
+pipline.run_pipeline()
